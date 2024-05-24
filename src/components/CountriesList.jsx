@@ -27,9 +27,9 @@ export default function CountriesList({ countries = [] }) {
 
   return (
     <>
-      <div className="mx-auto border-2 border-orange-600 max-w-7xl flex flex-col items-center md:flex-row place-content-between mt-4">
+      <div className="mx-auto border-2 border-orange-600 max-w-7xl flex flex-col items-center md:flex-row place-content-between mt-4 pt-4">
         <input
-          className="buscadorListado w-[250px] mx-2 px-2 dark:text-black"
+          className="buscadorListado w-[250px] mx-2 mb-2 md:mb-0 py-1 px-2 dark:text-black border-4 border-black rounded"
           type="text"
           placeholder="Ingresa el nombre del pais"
           value={searchTerm}
@@ -39,7 +39,7 @@ export default function CountriesList({ countries = [] }) {
         <select
           value={selectedRegion}
           onChange={handleRegionChange}
-          className="w-[250px] mt-2 md:mt-0 mx-2 px-1 dark:text-black"
+          className="w-[250px] mx-2 py-1 px-2 dark:text-black border-4 border-black rounded"
         >
           <option value="">Todas las regiones</option>
           <option value="Africa">África</option>
@@ -50,6 +50,9 @@ export default function CountriesList({ countries = [] }) {
         </select>
       </div>
 
+      <div className="mt-4 border-2 border-white text-center font-bold text-xl underline">
+        LISTADO DE PAÍSES
+      </div>
       <div className="listadoPaises flex flex-wrap place-content-around border-violet-600 border-4 max-w-7xl mx-auto mt-2">
         {filteredCountries.map((country) => {
           return (

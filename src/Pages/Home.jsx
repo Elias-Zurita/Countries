@@ -5,16 +5,17 @@ export default function Home() {
     <>
       <div className="border-violet-600 border-4 max-w-7xl mx-auto mt-8 mb-8 p-4">
         <h1 className="text-3xl font-bold underline text-center">
-          BIENVENIDO A LA APLICACIÓN DE PAISES DEL MUNDO
+          BIENVENIDO A LA APLICACIÓN DE PAÍSES DEL MUNDO
         </h1>
         <img
           src="Rotating_earth_animated_transparent.gif"
           alt=""
           className="mx-auto max-h-[350px]"
         />
-
         <br />
-        <p className="text-xl font-bold">INGRESA A LA SECCION QUE MAS TE INTERESE</p>
+        <p className="text-xl font-bold">
+          INGRESA A LA SECCION QUE MAS TE INTERESE
+        </p>
         <br />
         <div className="text-lg">En ellas podrás ver:</div>
         <ul className="list-disc px-6 text-lg">

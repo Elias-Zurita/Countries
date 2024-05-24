@@ -29,9 +29,14 @@ export default function Header() {
     setMenuOpen(!menuOpen);
   };
 
+  // Función para cerrar el menú después de hacer clic en un enlace
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <>
-      <div className="header bg-white shadow px-6">
+      <div className="header bg-white shadow px-6 fixed top-0 left-0 right-0 z-50">
         <div className="flex justify-between h-16 items-center max-w-7xl mx-auto">
           <button
             onClick={toggleMenu}
@@ -80,7 +85,7 @@ export default function Header() {
                 to="/Countries"
                 className="text-slate-600 px-3 py-2 hover:text-sky-500 transition-colors"
               >
-                Paises
+                Países
               </Link>
               <Link
                 to="/Population"
@@ -132,18 +137,21 @@ export default function Header() {
             <Link
               to="/"
               className="text-slate-700 hover:bg-sky-500 hover:text-white transition-colors px-3 py-2 block rounded-md"
+              onClick={closeMenu} // Cerrar el menú al hacer clic en un enlace
             >
               Inicio
             </Link>
             <Link
               to="/Countries"
               className="text-slate-700 hover:bg-sky-500 hover:text-white transition-colors px-3 py-2 block rounded-md"
+              onClick={closeMenu} // Cerrar el menú al hacer clic en un enlace
             >
               Paises
             </Link>
             <Link
               to="/Population"
               className="text-slate-700 hover:bg-sky-500 hover:text-white transition-colors px-3 py-2 block rounded-md"
+              onClick={closeMenu} // Cerrar el menú al hacer clic en un enlace
             >
               Población
             </Link>
