@@ -84,94 +84,129 @@ export default function CountryDetail() {
             key={country.cca2}
             className="border-2 border-orange-600 flex flex-col max-w-7xl mx-auto mt-4 md:justify-between"
           >
-            <div className="border-2 border-blue-600 text-center text-xl font-semibold p-2 md:w">
+            <div className="border-2 border-blue-600 text-center text-xl font-semibold p-2 md:w uppercase underline">
               {country.name.official}
             </div>
             <div className="flex flex-col md:flex-row md:mx-auto border-2 border-black md:w-full md:justify-between">
               <div className="border-2 border-violet-950 md:w-2/4">
-                <img
-                  src={country.flags.png}
-                  alt={country.flags.alt}
-                  className="w-[360px] mx-auto md:ml-2 "
-                />
+                <div className="border-4 border-red-700 md:h-[400px] md:flex md:items-center md:justify-center">
+                  <img
+                    src={country.flags.png}
+                    alt={country.flags.alt}
+                    className="w-[90%] mx-auto border-2 border-black"
+                  />
+                </div>
+              </div>
 
-                <div className="border-2 border-green-600 p-4">
+              <div className="border-4 border-red-800 flex flex-col items-center md:w-2/4">
+                <div className="flex flex-col md:h-[400px] border-2 border-violet-900 md:px-0.5 items-center py-6">
+                  <img
+                    src={country.coatOfArms.png}
+                    alt=""
+                    className="border-2 border-blue-600 md:h-[100%] md:w-auto w-3/4"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="border-2 border-green-600 p-4 flex flex-col md:flex md:flex-row">
+              <div className="border-4 border-slate-400 md:w-1/2">
+                <div>
+                  <strong>Capital:</strong> {country.capital}
+                </div>
+                <div>
+                  <strong>Continente:</strong> {country.subregion}
+                </div>
+                <div>
+                  <strong>Area:</strong>{" "}
+                  {new Intl.NumberFormat().format(country.area)}
+                </div>
+                <div className="border-2 border-slate-600 md:w-11/12 cursor-default">
+                  <strong>Paises limitrofes: </strong>
                   <div>
-                    <strong>Capital:</strong> {country.capital}
-                  </div>
-                  <div>
-                    <strong>Continente:</strong> {country.subregion}
-                  </div>
-                  <div>
-                    <strong>Area:</strong>{" "}
-                    {new Intl.NumberFormat().format(country.area)}
-                  </div>
-                  <div className="border-2 border-slate-600 w-11/12">
-                    <strong>Paises limitrofes: </strong>
-                    <div>
-                      {country.borders ? (
-                        country.borders.map((border, index) => (
-                          <span
-                            key={index}
-                            className="m-2 inline-block border-2 border-slate-300 p-1		"
-                          >
-                            {border}
-                          </span>
-                        ))
-                      ) : (
-                        <span>No tiene países limitrofes</span>
-                      )}
-                    </div>
-                  </div>
-                  <div>
-                    <strong>Población:</strong>{" "}
-                    {new Intl.NumberFormat().format(country.population)}
-                  </div>
-                  <div>
-                    <strong>Moneda:</strong>{" "}
-                    {country.currencies ? (
-                      Object.values(country.currencies)
-                        .map((currency) => currency.name)
-                        .join(", ")
+                    {country.borders ? (
+                      country.borders.map((border, index) => (
+                        <span
+                          key={index}
+                          className="m-2 inline-block border-2 border-slate-300 p-1	hover:bg-black hover:text-white transition duration-300 ease-in-out"
+                        >
+                          {border}
+                        </span>
+                      ))
                     ) : (
-                      <span>No posee moneda oficial</span>
-                    )}
-                  </div>
-                  <div>
-                    <strong>Símbolo monetario:</strong>{" "}
-                    {country.currencies ? (
-                      Object.values(country.currencies)
-                        .map((currency) => currency.symbol)
-                        .join(", ")
-                    ) : (
-                      <span>No posee símbolo monetario</span>
-                    )}
-                  </div>
-                  <div>
-                    <strong>Idiomas:</strong>{" "}
-                    {country.languages ? (
-                      Object.values(country.languages)
-                        .map((language) => language)
-                        .join(", ")
-                    ) : (
-                      <span>No posee idioma oficial</span>
+                      <span>No tiene países limitrofes</span>
                     )}
                   </div>
                 </div>
               </div>
-
-              <div className="border-4 border-red-800 flex flex-col items-center p-2 md:w-2/4">
-                <div className="flex flex-col">
-                  <strong>ESCUDO:</strong>{" "}
-                  <img
-                    src={country.coatOfArms.png}
-                    alt=""
-                    className="border-2 border-blue-600 h-80	"
-                  />
+              <div className="border-4 border-slate-400 md:w-1/2">
+                <div>
+                  <strong>Población:</strong>{" "}
+                  {new Intl.NumberFormat().format(country.population)}
                 </div>
-                <div className="border-2 border-slate-900 p-4">
-                  <strong>REGIÓN:</strong> {country.region}
-                  {renderRegionImage()}
+                <div>
+                  <strong>Moneda:</strong>{" "}
+                  {country.currencies ? (
+                    Object.values(country.currencies)
+                      .map((currency) => currency.name)
+                      .join(", ")
+                  ) : (
+                    <span>No posee moneda oficial</span>
+                  )}
+                </div>
+                <div>
+                  <strong>Símbolo monetario:</strong>{" "}
+                  {country.currencies ? (
+                    Object.values(country.currencies)
+                      .map((currency) => currency.symbol)
+                      .join(", ")
+                  ) : (
+                    <span>No posee símbolo monetario</span>
+                  )}
+                </div>
+                <div>
+                  <strong>Idiomas:</strong>{" "}
+                  {country.languages ? (
+                    Object.values(country.languages)
+                      .map((language) => language)
+                      .join(", ")
+                  ) : (
+                    <span>No posee idioma oficial</span>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="border-2 border-slate-900 p-4">
+              <strong>REGIÓN:</strong> {country.region}
+              {renderRegionImage()}
+              <div className="border-4 border-red-500 w-auto">
+                <div className="text-blue-700	underline font-bold flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="text-red-800 w-6 h-6 mr-2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                    />
+                  </svg>
+                  <a
+                    href={country.maps.googleMaps}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-black transition duration-300"
+                  >
+                    Google Maps
+                  </a>
                 </div>
               </div>
             </div>
