@@ -65,7 +65,7 @@ export default function Population() {
             {countries.map((country, index) => (
               <tr
                 key={country.cca2}
-                className="border-2 border-slate-600 hover:bg-orange-400 hover:font-bold"
+                className="border-2 border-slate-600 hover:bg-orange-400"
               >
                 <td className="border-2 border-slate-600 md:px-2 text-center md:text-xl">
                   {index + 1}
