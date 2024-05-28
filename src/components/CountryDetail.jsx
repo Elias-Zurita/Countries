@@ -82,34 +82,34 @@ export default function CountryDetail() {
         return (
           <div
             key={country.cca2}
-            className="border-2 border-orange-600 flex flex-col max-w-7xl mx-auto mt-4 md:justify-between"
+            className="flex flex-col max-w-7xl mx-auto mt-4 md:justify-between"
           >
-            <div className="border-2 border-blue-600 text-center text-xl font-semibold p-2 md:w uppercase underline">
+            <div className="text-center text-xl font-semibold p-2 md:w uppercase underline">
               {country.name.official}
             </div>
-            <div className="flex flex-col md:flex-row md:mx-auto border-2 border-black md:w-full md:justify-between">
-              <div className="border-2 border-violet-950 md:w-2/4">
-                <div className="border-4 border-red-700 md:h-[400px] md:flex md:items-center md:justify-center">
+            <div className="flex flex-col md:flex-row md:mx-auto md:w-full md:justify-between">
+              <div className="md:w-2/4">
+                <div className="md:h-[400px] md:flex md:items-center md:justify-center">
                   <img
                     src={country.flags.png}
                     alt={country.flags.alt}
-                    className="w-[90%] mx-auto border-2 border-black"
+                    className="w-[350px] md:w-[90%] max-h-[240px] md:max-h-[380px] mx-auto border-2"
                   />
                 </div>
               </div>
 
-              <div className="border-4 border-red-800 flex flex-col items-center md:w-2/4">
-                <div className="flex flex-col md:h-[400px] border-2 border-violet-900 md:px-0.5 items-center py-6">
+              <div className="flex flex-col items-center md:w-2/4">
+                <div className="flex flex-col md:h-[400px] md:px-0.5 items-center py-6">
                   <img
                     src={country.coatOfArms.png}
                     alt=""
-                    className="border-2 border-blue-600 md:h-[100%] md:w-auto w-3/4"
+                    className="md:h-[100%] md:w-auto w-[350px]"
                   />
                 </div>
               </div>
             </div>
-            <div className="border-2 border-green-600 p-4 flex flex-col md:flex md:flex-row">
-              <div className="border-4 border-slate-400 md:w-1/2">
+            <div className="p-4 flex flex-col md:flex md:flex-row">
+              <div className="md:w-1/2">
                 <div>
                   <strong>Capital:</strong> {country.capital}
                 </div>
@@ -118,9 +118,9 @@ export default function CountryDetail() {
                 </div>
                 <div>
                   <strong>Area:</strong>{" "}
-                  {new Intl.NumberFormat().format(country.area)}
+                  {new Intl.NumberFormat().format(country.area)} Km²
                 </div>
-                <div className="border-2 border-slate-600 md:w-11/12 cursor-default">
+                <div className="md:w-11/12 cursor-default">
                   <strong>Paises limitrofes: </strong>
                   <div>
                     {country.borders ? (
@@ -138,7 +138,7 @@ export default function CountryDetail() {
                   </div>
                 </div>
               </div>
-              <div className="border-4 border-slate-400 md:w-1/2">
+              <div className="md:w-1/2">
                 <div>
                   <strong>Población:</strong>{" "}
                   {new Intl.NumberFormat().format(country.population)}
@@ -175,10 +175,10 @@ export default function CountryDetail() {
                 </div>
               </div>
             </div>
-            <div className="border-2 border-slate-900 p-4">
+            <div className="p-4">
               <strong>REGIÓN:</strong> {country.region}
               {renderRegionImage()}
-              <div className="border-4 border-red-500 w-auto">
+              <div className="w-auto">
                 <div className="text-blue-700	underline font-bold flex">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -214,7 +214,7 @@ export default function CountryDetail() {
         );
       })}
 
-      <div className="border-2 border-blue-600 text-center">
+      <div className="text-center">
         <Link to="/Countries">
           <button className="py-1 px-4 border-2 border-slate-800 rounded mx-auto my-2 font-semibold hover:bg-slate-600 hover:text-white ease-in-out duration-700">
             Volver

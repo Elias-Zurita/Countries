@@ -32,7 +32,7 @@ export default function Population() {
 
   return (
     <>
-      <div className="border-black-600 border-4 max-w-7xl mx-auto mt-8 mb-8 p-4">
+      <div className="max-w-7xl mx-auto mt-8 mb-8 p-4">
         <div className="border-2 border-white font-bold text-xl flex justify-center items-center">
           <p>POBLACIÓN MUNDIAL</p>
           <svg

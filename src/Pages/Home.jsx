@@ -4,12 +4,12 @@ import { Link, Route, Routes } from "react-router-dom";
 export default function Home() {
   return (
     <>
-      <div className="border-violet-600 border-4 max-w-7xl mx-auto mt-8 mb-8 p-4">
+      <div className="max-w-7xl mx-auto mt-8 mb-8 p-4">
         <h1 className="text-3xl font-bold underline text-center">
           BIENVENIDO A LA APLICACIÓN DE PAÍSES DEL MUNDO
         </h1>
         <img
-          src="Rotating_earth_animated_transparent.gif"
+          src="Rotating_earth.gif"
           alt=""
           className="mx-auto max-h-[350px]"
         />

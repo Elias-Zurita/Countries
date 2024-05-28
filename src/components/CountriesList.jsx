@@ -27,9 +27,9 @@ export default function CountriesList({ countries = [] }) {
 
   return (
     <>
-      <div className="mx-auto border-2 border-orange-600 max-w-7xl flex flex-col items-center md:flex-row place-content-between mt-4 pt-4">
+      <div className="mx-auto max-w-7xl flex flex-col items-center md:flex-row place-content-between mt-4 pt-4">
         <input
-          className="buscadorListado w-[250px] mx-2 mb-2 md:mb-0 py-1 px-2 dark:text-black border-4 border-black rounded"
+          className="buscadorListado w-[250px] mx-2 mb-2 md:mb-0 py-1 px-2 dark:text-black border-2 border-black rounded"
           type="text"
           placeholder="Ingresa el nombre del pais"
           value={searchTerm}
@@ -39,7 +39,7 @@ export default function CountriesList({ countries = [] }) {
         <select
           value={selectedRegion}
           onChange={handleRegionChange}
-          className="w-[250px] mx-2 py-1 px-2 dark:text-black border-4 border-black rounded"
+          className="w-[250px] mx-2 py-1 px-2 dark:text-black border-2 border-black rounded"
         >
           <option value="">Todas las regiones</option>
           <option value="Africa">África</option>
@@ -50,23 +50,23 @@ export default function CountriesList({ countries = [] }) {
         </select>
       </div>
 
-      <div className="mt-4 border-2 border-white text-center font-bold text-xl underline">
+      <div className="mt-4 text-center font-bold text-xl underline">
         LISTADO DE PAÍSES
       </div>
-      <div className="listadoPaises flex flex-wrap place-content-around border-violet-600 border-4 max-w-7xl mx-auto mt-2">
+      <div className="listadoPaises flex flex-wrap place-content-around max-w-7xl mx-auto mt-2">
         {filteredCountries.map((country) => {
           return (
             <div
-              className="cajaListado border-2 border-orange-600 md:w-[275px] sm:w-[] w-[150px] m-[10px] bg-white hover:scale-105 ease-in-out duration-300"
+              className="cajaListado md:w-[275px] sm:w-[] w-[150px] m-[10px] bg-white hover:scale-105 ease-in-out duration-300"
               key={country.cca2}
             >
               <Link to={`/Countries/${country.name.common}`}>
                 <img
                   src={country.flags.png}
                   alt=""
-                  className="border-2 border-blue-600  h-[100px] md:h-[150px] w-full object-cover object-center"
+                  className="border-2 h-[100px] md:h-[150px] w-full object-cover object-center"
                 />
-                <div className="infoCountry p-[5px] border-2 border-violet-500 font-semibold text-center text-slate-800">
+                <div className="infoCountry p-[5px] border-2 font-semibold text-center text-slate-800">
                   <h2>{country.name.common}</h2>
                 </div>
               </Link>

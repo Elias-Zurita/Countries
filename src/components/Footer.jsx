@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <div className="border-2 border-violet-500 p-2 bg-slate-500 text-white text-base">
+      <div className="p-2 bg-slate-500 text-white text-base">
         Diseño sitio Web - by{" "}
         <a
           href="https://elias-zurita.github.io/"
