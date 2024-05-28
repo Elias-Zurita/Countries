@@ -179,7 +179,7 @@ export default function CountryDetail() {
               <strong>REGIÓN:</strong> {country.region}
               {renderRegionImage()}
               <div className="w-auto">
-                <div className="text-blue-700	underline font-bold flex">
+                <div className="text-black	underline font-bold flex">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -203,7 +203,7 @@ export default function CountryDetail() {
                     href={country.maps.googleMaps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-black transition duration-300"
+                    className="hover:text-blue-700 transition duration-300"
                   >
                     Google Maps
                   </a>

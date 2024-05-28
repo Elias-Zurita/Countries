@@ -8,7 +8,7 @@ import Population from "../Pages/Population";
 
 // Modo nocturno
 export default function Header() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     if (theme === "dark") {
