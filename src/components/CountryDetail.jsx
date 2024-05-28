@@ -216,7 +216,7 @@ export default function CountryDetail() {
 
       <div className="text-center">
         <Link to="/Countries">
-          <button className="py-1 px-4 border-2 border-slate-800 rounded mx-auto my-2 font-semibold hover:bg-slate-600 hover:text-white ease-in-out duration-700">
+          <button className="py-1 px-4 my-[25px] border-2 border-slate-800 rounded mx-auto font-semibold hover:bg-slate-600 hover:text-white ease-in-out duration-700">
             Volver
           </button>
         </Link>
