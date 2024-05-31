@@ -86,9 +86,9 @@ export default function CountriesList({ countries = [] }) {
                 <img
                   src={country.flags.png}
                   alt=""
-                  className="border-2 h-[100px] md:h-[150px] w-full object-cover object-center"
+                  className="border-2 border-slate-400 h-[100px] md:h-[150px] w-full object-cover object-center"
                 />
-                <div className="infoCountry p-[5px] border-2 font-semibold text-center text-slate-800">
+                <div className="infoCountry p-[5px] border-0 bg-slate-400	font-semibold text-center text-white">
                   <h2>{country.name.common}</h2>
                 </div>
               </Link>

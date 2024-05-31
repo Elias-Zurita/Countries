@@ -18,8 +18,9 @@ export default function Header() {
     }
   }, [theme]);
 
+  // Manejo del cambio de tema con el click en el boton
   const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(theme === "dark" ? "light" : "dark"); // Si el tema es dark alterna a light, sino (si es light) alterna a dark
   };
 
   // Menu responsive
