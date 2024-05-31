@@ -5,6 +5,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home";
 import Countries from "../Pages/Countries";
 import Population from "../Pages/Population";
+import Area from "../Pages/Area";
 
 // Modo nocturno
 export default function Header() {
@@ -94,6 +95,12 @@ export default function Header() {
               >
                 Población
               </Link>
+              <Link
+                to="/Area"
+                className="text-slate-600 px-3 py-2 hover:text-sky-500 transition-colors"
+              >
+                Supercifies
+              </Link>
             </div>
           </div>
           <button
@@ -156,6 +163,13 @@ export default function Header() {
             >
               Población
             </Link>
+            <Link
+              to="/Area"
+              className="text-slate-700 hover:bg-sky-500 hover:text-white transition-colors px-3 py-2 block rounded-md"
+              onClick={closeMenu} // Cerrar el menú al hacer clic en un enlace
+            >
+              Superficie
+            </Link>
           </div>
         )}
       </div>
@@ -164,6 +178,7 @@ export default function Header() {
         <Route path="/" element={<Home />} />
         <Route path="/Countries/*" element={<Countries />} />
         <Route path="/Population" element={<Population />} />
+        <Route path="/Area" element={<Area />} />
       </Routes>
     </>
   );
