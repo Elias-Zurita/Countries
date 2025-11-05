@@ -29,25 +29,6 @@ export default function Area() {
     })();
   }, []);
 
-  // --- Loader mientras carga ---
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-[80vh]">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
-        <span className="ml-4 text-lg font-semibold">Cargando datos...</span>
-      </div>
-    );
-  }
-
-  // --- Mensaje de error ---
-  if (error) {
-    return (
-      <div className="flex justify-center items-center min-h-[80vh] text-red-600 font-semibold text-center">
-        ❌ Error al cargar los países: <br /> {error}
-      </div>
-    );
-  }
-
   return (
     <>
       <div className="max-w-7xl mx-auto mt-8 mb-8 p-4">
