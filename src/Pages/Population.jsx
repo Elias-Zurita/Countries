@@ -7,7 +7,7 @@ export default function Population() {
 
   useEffect(() => {
     (async () => {
-      const API_URL = "https://restcountries.com/v3.1/all";
+      const API_URL = "https://restcountries.com/v3.1/all?fields=name,flags,population,cca2";
       const countriesResponse = await fetch(API_URL).then((response) =>
         response.json()
       );
