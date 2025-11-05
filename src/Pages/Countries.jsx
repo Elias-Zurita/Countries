@@ -13,7 +13,7 @@ export default function Countries() {
 
   async function fetchCountries() {
     try {
-      const API_URL = "https://restcountries.com/v3.1/all";
+      const API_URL = "https://restcountries.com/v3.1/all?fields=name,region,flags,cca2";
       const countriesResponse = await fetch(API_URL).then((response) =>
         response.json()
       );
