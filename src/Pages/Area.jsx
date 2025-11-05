@@ -7,7 +7,7 @@ export default function Area() {
 
   useEffect(() => {
     (async () => {
-      const API_URL = "https://restcountries.com/v3.1/all";
+      const API_URL = "https://restcountries.com/v3.1/all?fields=name,flags,area,cca2";
       const countriesResponse = await fetch(API_URL).then((response) =>
         response.json()
       );
@@ -20,6 +20,7 @@ export default function Area() {
       // new Intl.NumberFormat().format Es un metodo de Javascript para hacer mas legible el numero del area separandola con puntos.
       // El metodo reduce transforma a un valor unico el total del array del area sumando estos.
       // El acumulador acumula el area de cada country. Si es "null" o "undefined" el area toma como valor "0"
+      // Calcular la superficie total mundial
       const totalArea = countriesResponse.reduce(
         (acumulador, country) => acumulador + (country.area || 0),
         0
@@ -27,6 +28,25 @@ export default function Area() {
       setTotalArea(totalArea);
     })();
   }, []);
+
+  // --- Loader mientras carga ---
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[80vh]">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+        <span className="ml-4 text-lg font-semibold">Cargando datos...</span>
+      </div>
+    );
+  }
+
+  // --- Mensaje de error ---
+  if (error) {
+    return (
+      <div className="flex justify-center items-center min-h-[80vh] text-red-600 font-semibold text-center">
+        ❌ Error al cargar los países: <br /> {error}
+      </div>
+    );
+  }
 
   return (
     <>
